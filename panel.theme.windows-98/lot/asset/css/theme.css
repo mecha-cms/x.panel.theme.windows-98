@@ -1,0 +1,229 @@
+html {
+  background: #c0c0c0;
+  color: #000;
+  font-family: verdana, 'bitstream vera sans', 'dejavu sans', sans-serif;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bolder;
+}
+
+a[href] {
+  color: #008;
+}
+
+a[href]:focus {
+  outline: 1px dotted;
+  outline-offset: -1px;
+  color: #009;
+}
+
+code, .code {
+  font-size: 90%;
+  font-family: 'bitstream vera sans mono', 'dejavu sans mono', monospace;
+}
+
+fieldset {
+  border: 0;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+
+.alert p {
+  background: #ccc;
+  padding: 8px 16px;
+}
+
+.button,
+.button[href],
+.lot\:pager > span > a,
+.lot\:pager > span > b {
+  background: none;
+  color: #000;
+  border: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+
+.button:focus,
+.button[href]:focus,
+.lot\:pager > span > a:focus,
+.button:active,
+.button[href]:active,
+.lot\:pager > span > a:active {
+  background: none;
+  color: #000;
+  border: 0;
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+
+.button[disabled],
+.lot\:pager > span > b {
+  color: grey;
+  text-shadow: 1px 1px #fff;
+  cursor: default;
+}
+
+.input,
+.select,
+.textarea {
+  background: #fff;
+  color: #000;
+  border: 0;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+
+.lot\:bar {
+  background: #0a0a0a;
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #fff;
+}
+
+.lot\:bar .field .input {
+  box-shadow: none;
+  background: rgba(0, 0, 0, .125);
+  color: inherit;
+}
+
+.lot\:bar > ul > li > a {
+  color: #fff;
+}
+
+.lot\:bar > ul > li > a:focus,
+.lot\:bar > ul > li > a:hover {
+  outline: 0;
+  color: #fff;
+}
+
+.lot\:menu,
+.lot\:menu ul {
+  background: #000080;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+}
+
+.lot\:menu a {
+  color: inherit;
+}
+
+.lot\:menu li > a:focus,
+.lot\:menu li:focus > a,
+.lot\:menu li > a:hover,
+.lot\:menu li:hover > a {
+  outline: 0;
+  background: #000070;
+  color: #fff;
+}
+
+.lot\:file,
+.lot\:page {
+  background: #fff;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  padding: 2px;
+}
+
+.lot\:file li,
+.lot\:page li {
+  background: none;
+  border-color: #fff;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.lot\:file li.is\:active,
+.lot\:page li.is\:active {
+  background: #eef;
+  border-color: #eef;
+}
+
+.lot\:file li.is\:file::before {
+  background: linear-gradient(-45deg, #ccc, #fff);
+  border: 0;
+  box-shadow: inset 1px 1px #808080, inset -1px -1px #000;
+}
+
+.lot\:file li.is\:folder::before {
+  background: linear-gradient(-45deg, #ffcc99, #ffff99);
+  box-shadow: inset 1px 1px #999900, inset -1px -1px #333300, inset 2px 2px #fff, inset -2px -2px #cccc66;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+.lot\:file li.is\:folder::after {
+  border: 0;
+  border-radius: 1px;
+  margin-left: 1px;
+  height: 6px;
+  background: linear-gradient(-45deg, #ffcc99, #ffff99);
+  box-shadow: inset 1px 1px #999900, inset -1px -1px #333300, inset 2px 2px #fff, inset -2px -2px #cccc66;
+}
+
+.lot\:file .lot\:task,
+.lot\:page .lot\:task,
+.lot\:file .lot\:task>*,
+.lot\:page .lot\:task>* {
+ margin:0
+}
+.lot\:file .lot\:task>* .title span,
+.lot\:page .lot\:task>* .title span {
+ display:none
+}
+
+.lot\:tab > nav {
+  background: #bbb;
+}
+
+.lot\:tab > nav > ul > li {
+  border: 0;
+}
+
+.lot\:tab > nav > ul > li > a {
+  box-shadow: inset 0 -2px #999;
+}
+
+.lot\:tab > nav > ul > li > a:focus {
+  outline: 0;
+}
+
+.lot\:tab > nav > ul > li > a:focus,
+.lot\:tab > nav > ul > li > a:hover {
+  background: rgba(0, 0, 0, .025);
+}
+
+.lot\:tab > nav > ul > li.is\:active::before,
+.lot\:tab > nav > ul > li.is\:active::after {
+  border: 0;
+  height: 2px;
+  box-shadow: inset 0 -2px #aaa;
+}
+
+.tag-picker .tags {
+  margin: 1px;
+}
+
+.tag-picker .tag[title] {
+  background: #1084d0;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.tag-picker .tag[title]:focus {
+  background: #0d69c0;
+}
+
+.input[type=radio] {
+  -moz-appearance: none;
+  border-radius: 100%;
+  box-shadow: none;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 2px solid #808080;
+}
+
+.input[type=radio]:checked {
+  background: #000080;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
