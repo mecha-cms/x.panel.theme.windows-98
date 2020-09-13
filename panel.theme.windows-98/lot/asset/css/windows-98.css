@@ -1,8 +1,6 @@
 html {
   background: #c0c0c0;
   color: #000;
-  font-family: verdana, 'bitstream vera sans', 'dejavu sans', sans-serif;
-  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,15 +11,14 @@ a[href] {
   color: #008;
 }
 
-a[href]:focus {
-  outline: 1px dotted;
-  outline-offset: -1px;
+a[href]:focus,
+a[href]:active {
   color: #009;
 }
 
-code, .code {
-  font-size: 90%;
-  font-family: 'bitstream vera sans mono', 'dejavu sans mono', monospace;
+pre code {
+  background: #aaa;
+  color: inherit;
 }
 
 fieldset {
@@ -53,7 +50,7 @@ fieldset {
   background: none;
   color: #000;
   border: 0;
-  outline: 1px dotted #000;
+  outline: 1px dotted;
   outline-offset: -4px;
   box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
@@ -65,6 +62,7 @@ fieldset {
   cursor: default;
 }
 
+pre.is\:text code,
 .input,
 .select,
 .textarea {
@@ -92,7 +90,6 @@ fieldset {
 
 .lot\:bar > ul > li > a:focus,
 .lot\:bar > ul > li > a:hover {
-  outline: 0;
   color: #fff;
 }
 
@@ -111,7 +108,6 @@ fieldset {
 .lot\:menu li:focus > a,
 .lot\:menu li > a:hover,
 .lot\:menu li:hover > a {
-  outline: 0;
   background: #000070;
   color: #fff;
 }
@@ -161,13 +157,13 @@ fieldset {
 
 .lot\:file .lot\:task,
 .lot\:page .lot\:task,
-.lot\:file .lot\:task>*,
-.lot\:page .lot\:task>* {
- margin:0
+.lot\:file .lot\:task > *,
+.lot\:page .lot\:task > * {
+  margin: 0;
 }
-.lot\:file .lot\:task>* .title span,
-.lot\:page .lot\:task>* .title span {
- display:none
+.lot\:file .lot\:task > * .title span,
+.lot\:page .lot\:task > * .title span {
+  display: none;
 }
 
 .lot\:tab > nav {
@@ -180,10 +176,6 @@ fieldset {
 
 .lot\:tab > nav > ul > li > a {
   box-shadow: inset 0 -2px #999;
-}
-
-.lot\:tab > nav > ul > li > a:focus {
-  outline: 0;
 }
 
 .lot\:tab > nav > ul > li > a:focus,
@@ -212,18 +204,69 @@ fieldset {
   background: #0d69c0;
 }
 
-.input[type=radio] {
+.input[type='checkbox'],
+.input[type='radio'] {
+  -webkit-appearance: none;
   -moz-appearance: none;
-  border-radius: 100%;
-  box-shadow: none;
-  width: 18px;
-  height: 18px;
+  appearance: none;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .125);
+}
+
+.input[type='checkbox'][disabled],
+.input[type='radio'][disabled] {
+  background: #888;
+}
+
+.input[type='checkbox']::before,
+.input[type='radio']::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
   background: #fff;
-  border: 2px solid #808080;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .125);
 }
 
-.input[type=radio]:checked {
-  background: #000080;
-  box-shadow: inset 0 0 0 3px #fff;
+.input[type='checkbox'] {
+  background: #000;
 }
 
+.input[type='checkbox']:checked::before {
+  top: 1px;
+  right: 5px;
+  bottom: 4px;
+  left: 5px;
+  background: none;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  visibility: visible;
+  box-shadow: none;
+}
+
+.input[type='checkbox']:focus {
+  background: #008;
+}
+
+.input[type='radio'] {
+  background: #000;
+}
+
+.input[type='radio']:checked::before {
+  background: none;
+  border: 2px solid #fff;
+  visibility: visible;
+}
+
+.input[type='radio']:focus {
+  background: #008;
+}
+
+.input[type='radio'],
+.input[type='radio']::before {
+  border-radius: 100%;
+}
